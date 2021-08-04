@@ -1,0 +1,6 @@
+<h1>Gossip n° <%=@gossip.id%>:<%=@gossip.title%></h1>
+Ecrit par <%= link_to User.find(@gossip.user_id).first_name, user_path(@gossip.user_id),class: 'btn btn-primary' %>
+<br/>
+<%=  @gossip.content%>%>
+<br/>
+<%=link_to "Update ce gossip", edit_gossip_path, class:'btn btn-primary'%>

@@ -1,0 +1,12 @@
+<h1>Hello!</h1>
+
+<p>Vous avez un Gossip à partager? c'est <%= link_to "içi", new_gossip_path, class:"link-darks" %>
+</p>
+<p> <% @gossip.each do |gossip|%>
+  Gossip n°<%= gossip.id%>:<%gossip.title%>
+  écrit par <%=User.find(gossip.user_id).first_name%>
+  <%= link_to "Lire le gossip", gossip_path(gossip.id), class: 'link-dark' %>
+  <br/>
+    <% end%>
+    
+</p>
