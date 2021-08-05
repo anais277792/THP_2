@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
             flash[:danger] = "Please log in."
             redirect_to new_session_path
           else
-            @comment = Comment.create(content:params[:content],user_id:user.id,gossip:......)
+            redirect_to root_path
+          end
     end
     
     def new
@@ -14,7 +15,7 @@ class CommentsController < ApplicationController
     end
 
     def index
-        
+
     end
 
     def destroy 
