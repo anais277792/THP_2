@@ -1,12 +1,30 @@
-<h1>Hello!</h1>
 
-<p>Vous avez un Gossip à partager? c'est <%= link_to "içi", new_gossip_path, class:"link-darks" %>
-</p>
-<p> <% @gossip.each do |gossip|%>
-  Gossip n°<%= gossip.id%>:<%gossip.title%>
-  écrit par <%=User.find(gossip.user_id).first_name%>
-  <%= link_to "Lire le gossip", gossip_path(gossip.id), class: 'link-dark' %>
+<header class="header-city blur-2" >
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="site-heading">
+          <br/>
+                 <h1>Bienvenue dans The Gossip Project</h1>
+                <h4 class="card-subtitle mb-2 ">Vous allez découvrir tous les secret de THP</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+<section class="container">
   <br/>
-    <% end%>
-    
-</p>
+<div class="list-group">
+  <% @gossip.each do |gossip|%>
+  <a href="<%=gossip_path(gossip.id)%>" class="list-group-item list-group-item-action " aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h2 class="mb-1"><%=gossip.title%></h2>
+    </div>
+    <p class="mb-1"><%=gossip.content%></p>
+    <small><%=User.find(gossip.user_id).first_name%></small>
+  </a>
+  <br/>
+  <%end%>
+</div>
+</section>
+

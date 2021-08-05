@@ -1,0 +1,14 @@
+<% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
+
+<%= form_with url: sessions_path, method: :post, local: true do |form| %>
+  <%= form.label :email, "email" %>
+  <%= form.text_field :email %>
+<br/>
+  <%= form.label :password, "mot de passe" %>
+  <%= form.text_field :password %>
+
+  <%= form.submit "connexion" %>
+<% end %>

@@ -1,0 +1,8 @@
+
+<%=@user.first_name%>
+<%=@user.last_name%>
+<%=@user.email%>
+<%=@user.description%>
+<%=@user.age%>
+
+ <a class="btn btn-primary" href="<%= city_path(@user.city_id)%>"><%=City.find(@user.id).name%></a>

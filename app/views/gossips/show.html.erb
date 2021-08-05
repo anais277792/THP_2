@@ -1,6 +1,17 @@
-<h1>Gossip n° <%=@gossip.id%>:<%=@gossip.title%></h1>
-Ecrit par <%= link_to User.find(@gossip.user_id).first_name, user_path(@gossip.user_id),class: 'btn btn-primary' %>
-<br/>
-<%=  @gossip.content%>%>
-<br/>
-<%=link_to "Update ce gossip", edit_gossip_path, class:'btn btn-primary'%>
+<div class="container box">
+<div class="container-fluid w-60  mb-1 justify-content-center ">
+    
+    <h1>Gossip n° <%=@gossip.id%>:<%=@gossip.title%></h1>
+
+    Ecrit par <%= link_to User.find(@gossip.user_id).first_name, user_path(@gossip.user_id),class: 'btn btn-primary' %>
+    <br/>
+    <%=  @gossip.content%>
+    <br/>
+    <small><%=  @user.city %></small>
+    <br/>
+    <!--%=link_to "Update ce gossip", edit_gossip_path, class:'btn btn-primary'%-->
+    <a href="<%=edit_gossip_path%>" class="btn btn-primary">Update</a>
+    <!--%=link_to "Supprimer ce gossip", root_path, class:'btn btn-danger'%-->
+    <a href="<%=root_path%>" class="btn btn-danger" data-confirm = "êtes-vous sûre de vouloir supprimer ce gossip?" data-method="DELETE">Supprimer ce gossip</a>
+</div>
+</div>

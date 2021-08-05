@@ -1,0 +1,6 @@
+<h1><%=@city.name%></h1>
+<%= @gossips.each do |gossip|%>
+<p><%gossip.title%> : <%gossip.content%> 
+<br/>
+écrit par : <%User.find(gossip.user_id)%></p>
+<%end%>
